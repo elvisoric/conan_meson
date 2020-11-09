@@ -3,7 +3,9 @@ import os
 
 class ConanFileToolsTest(ConanFile):
     generators = "pkg_config"
-    requires = "fmt/7.0.3"
+    requires = [ "fmt/7.0.3",
+                "nanodbc/cci.20200807"
+                ]
     settings = "os", "compiler", "build_type"
 
     def build(self):
