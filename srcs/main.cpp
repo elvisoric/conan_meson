@@ -1,6 +1,12 @@
-#include <foo.hpp>
+#define CROW_MAIN
+#include <crow/crow_all.h>
 
 int main() {
-  foo();
-  return 0;
+  crow::SimpleApp app;
+
+  CROW_ROUTE(app, "/")
+  ([]() { return "Hello, world!"; });
+
+  app.port(18080).run();
 }
+
